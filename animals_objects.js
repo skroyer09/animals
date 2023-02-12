@@ -28,7 +28,12 @@ function loadJSON() {
 function prepareObjects(jsonData) {
   jsonData.forEach((jsonObject) => {
     const animal = Object.create(Animal);
-    animal.name = "Belinda";
+    const text = jsonObject.fullname.split(" ");
+
+    animal.age = jsonObject.age;
+    animal.name = text[0];
+    animal.type = text[3];
+    animal.desc = text[2];
 
     allAnimals.push(animal);
 
